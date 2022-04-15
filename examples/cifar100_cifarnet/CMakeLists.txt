@@ -3,8 +3,8 @@ project(cifar100_cifarnet)
 
 # USER flags (change here) ################################################
 # Threads
-add_definitions(-D LL_THREADS=4)
-add_definitions(-D HL_THREADS=1)
+add_definitions(-D LL_THREADS=8)
+add_definitions(-D HL_THREADS=2)
 
 # Quire mode (0 = disabled, 1 = old standard, 2 = new standard)
 add_definitions(-D QUIRE_MODE=1)

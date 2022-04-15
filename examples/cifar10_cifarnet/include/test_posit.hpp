@@ -17,8 +17,10 @@ void test_posit(Model<Type>& model, DataLoader& data_loader, size_t dataset_size
 	using L = typename Type::Loss;
 	using T = unsigned short int;
 	
+	std::printf("start testing..\n");
 	// Loop the entire testing dataset
 	for(auto const& batch : data_loader) {
+		std::printf("testing..\n");
 		// Get data and target
 		auto data_float = batch.data;
 		auto target_float = batch.target;
@@ -44,7 +46,7 @@ void test_posit(Model<Type>& model, DataLoader& data_loader, size_t dataset_size
 		correct_top3 += target.in(top3).template sum<size_t>();
 		correct += pred.eq(target).template sum<size_t>();
 	}
-	
+	std::printf("compute loss..\n");
 	// Get average loss
 	test_loss /= dataset_size;
 	

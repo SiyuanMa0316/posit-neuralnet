@@ -7,7 +7,7 @@ add_definitions(-D LL_THREADS=4)
 add_definitions(-D HL_THREADS=1)
 
 # Quire mode (0 = disabled, 1 = old standard, 2 = new standard)
-add_definitions(-D QUIRE_MODE=1)
+add_definitions(-D QUIRE_MODE=0)
 
 # Underflow mode (0 = disabled, -1 = round, 1 = underflows <minpos/2^1, 2 = underflow <minpos/2^2, ...)
 add_definitions(-D UNDERFLOW_MODE=0)
@@ -83,6 +83,11 @@ target_link_libraries(train_float ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(train_float "${TORCH_LIBRARIES}")
 set_property(TARGET train_float PROPERTY CXX_STANDARD 14)
 
+add_executable(test_float ${SRC_FOLDER}/test_float.cpp)
+target_link_libraries(test_float ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(test_float "${TORCH_LIBRARIES}")
+set_property(TARGET test_float PROPERTY CXX_STANDARD 14)
+
 add_executable(train_posit ${SRC_FOLDER}/train_posit.cpp)
 target_link_libraries(train_posit ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(train_posit "${TORCH_LIBRARIES}")
@@ -92,4 +97,6 @@ add_executable(test_posit ${SRC_FOLDER}/test_posit.cpp)
 target_link_libraries(test_posit ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(test_posit "${TORCH_LIBRARIES}")
 set_property(TARGET test_posit PROPERTY CXX_STANDARD 14)
+
+
 ###########################################################################
