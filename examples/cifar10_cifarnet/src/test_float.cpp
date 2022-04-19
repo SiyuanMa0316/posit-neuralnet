@@ -57,12 +57,16 @@ int main() {
 
 	// Test model
 	//Posit
+
 	std::cout << std::endl << "Float32" << std::endl;
+	test_float(model_float, *test_loader, test_dataset_size);
+
+	std::cout << std::endl << "Float32 GPU" << std::endl;
 	test_float_32_GPU(model_float, *test_loader, test_dataset_size);
 
     std::cout << "Finished!\n";
 
-	std::cout << std::endl << "Float16" << std::endl;
+	std::cout << std::endl << "Float16 GPU" << std::endl;
 	test_float_16_GPU(model_float, *test_loader, test_dataset_size);
 
     std::cout << "Finished!\n";

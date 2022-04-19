@@ -17,9 +17,9 @@ using namespace sw::unum;
 
 // Posit configuration
 struct Type{
-	typedef posit<8, 2> Optimizer;
-	typedef posit<8, 2> Forward;
-	typedef posit<8, 2> Loss;
+	typedef posit<8, 3> Optimizer;
+	typedef posit<8, 3> Forward;
+	typedef posit<8, 3> Loss;
 	typedef Forward Backward;
 	typedef Forward Gradient;
 	typedef posit<16, 2> LoadFile;
