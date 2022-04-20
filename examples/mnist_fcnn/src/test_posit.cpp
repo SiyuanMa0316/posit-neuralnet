@@ -16,7 +16,7 @@
 using namespace sw::unum;
 
 // Posit configuration
-using Posit = posit<8, 2>;
+using Posit = posit<8, 4>;
 
 // Dataset path
 #define DATASET_PATH				"../dataset"
@@ -28,7 +28,7 @@ using Posit = posit<8, 2>;
 // Options
 #define LOAD true
 #define COPY true
-using PositLoad = posit<8, 2>;
+using PositLoad = posit<8, 4>;
 
 int main() {
 	// Line buffering
