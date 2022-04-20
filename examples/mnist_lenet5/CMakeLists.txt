@@ -83,6 +83,11 @@ target_link_libraries(train_float ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(train_float "${TORCH_LIBRARIES}")
 set_property(TARGET train_float PROPERTY CXX_STANDARD 14)
 
+add_executable(test_float ${SRC_FOLDER}/test_float.cpp)
+target_link_libraries(test_float ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(test_float "${TORCH_LIBRARIES}")
+set_property(TARGET test_float PROPERTY CXX_STANDARD 14)
+
 add_executable(train_posit ${SRC_FOLDER}/train_posit.cpp)
 target_link_libraries(train_posit ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(train_posit "${TORCH_LIBRARIES}")
